@@ -51,26 +51,7 @@ public class StepsDefs {
         baseURl = config.getProperty("baseURL");
     }
 
- /*   @Given("^I test post call with the following payload$")
-    public void i_test_post_call_with_the_following_payload(DataTable arg1) throws Throwable {
-        Map<String,String> payload1 = new HashMap<String, String>();
-        List<List<String>> data = arg1.raw();
 
-        payload1.put("_id",  data.get(1).get(0));
-        payload1.put("businessUnitId",  data.get(1).get(1));
-        payload1.put("createByUserId",  data.get(1).get(2));
-        payload1.put("name",  data.get(1).get(3));
-        payload1.put("public",  data.get(1).get(4));
-        payload1.put("default",  data.get(1).get(5));
-        payload1.put("tabType",  data.get(1).get(6));
-
-
-        sendCall = new TabRequestCalls(baseURl);
-        String endpoint = config.getProperty("posttab");
-        System.out.println("printing end point..." + endpoint);
-        response= sendCall.postCall(payload1,endpoint);
-
-    }*/
 
 
     @When("^I create a tab for the user \"(.*?)\" with the following payload$")
