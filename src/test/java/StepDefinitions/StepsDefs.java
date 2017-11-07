@@ -23,9 +23,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import TestUtils.TabUtils;
 import TestUtils.UpdateTabUtils;
-/**
- * Created by Faiyyaz.Shaik on 10/16/2017.
- */
+
 public class StepsDefs {
 
     public static Properties config = null;
