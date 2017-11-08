@@ -35,8 +35,7 @@ public class MarketCalls {
 
         String jsonAsString = response.asString();
         System.out.println("response as jsonAsString...."+ jsonAsString);
-//        Markets[] result = response.as(Markets[].class);
-//        System.out.println("printing name......"+ result[0].getName());
+
          return response;
     }
 

@@ -6,11 +6,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
-
 import ResponsePayload.Markets;
-//import ResponsePayload.UsersResponsePayload;
 import RestCalls.MarketCalls;
-//import TestUtils.Base;
 import RestCalls.UserCalls;
 import io.restassured.response.Response;
 import org.junit.Assert;
@@ -38,7 +35,6 @@ public class StepsDefs {
     Markets[] result = null;
     Markets marketsResponsePayload;
     UserCalls userCalls;
- //   UsersResponsePayload usersResponsePayload = null;
 
 
     public StepsDefs() throws IOException {
@@ -159,9 +155,6 @@ public class StepsDefs {
     public void i_should_see_valid_response_code_with(String responseCode, String responseMessage) throws Throwable {
         if (responseCode.equalsIgnoreCase("200")) {
 
-            //       verifyStatus(responseCode, responseMessage);
-
-            //   Base.verifyStatus(responseCode,response);
 
             Assert.assertEquals(responseCode, Integer.toString(response.getStatusCode()));
             Assert.assertNotNull(response.path("_id"));
@@ -401,7 +394,7 @@ public class StepsDefs {
         userCalls = new UserCalls(baseURl);
         if(xUserId.equalsIgnoreCase("Broadcast Manager")){
          response =   userCalls.getUserDetails(config.getProperty("getUserdetailsendpoint")+id, xUserId);
-          //  usersResponsePayload = response.as(UsersResponsePayload.class);
+
         }
 
          else if(xUserId.equalsIgnoreCase("Traffic Manager")){
@@ -417,25 +410,7 @@ public class StepsDefs {
     }
 
 
- /*   @Then("^I should see following details in User response payload$")
-    public void i_should_see_following_details_in_User_response_payload(DataTable arg1) throws Throwable {
 
-        Map<String, String> payload = new HashMap<String, String>();
-        List<List<String>> data = arg1.raw();
-
-        payload.put("agencyType", data.get(1).get(0));
-        System.out.println("printing expected agencyType" + payload.get("agencyType"));
-      //  payload.put("name", data.get(1).get(1));
-       // System.out.println("printing expected user name"+ payload.get("name"));
-
-       String[] actual_agencytype =  usersResponsePayload.getBu().get_cm().getCommon().getAgencyType();
-
-
-
-        Assert.assertEquals(actual_agencytype, data.get(1).get(0));
-
-
-*/
 
 
     }

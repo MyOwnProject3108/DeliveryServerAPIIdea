@@ -32,19 +32,6 @@ public class TabRequestCalls {
 
     }
 
- /*   public Response postCall(Map<String, String> payload, String endpoint)
-    {
-        response=given().
-                log().all()
-                .contentType(ContentType.JSON)
-                .body(payload).
-                        when().
-                        post(endpoint).
-                        then().
-                        extract().response();
-        String jsonAsString = response.asString();
-        return response;
-    }*/
 
     public Response postCallWithUserId(TabUtils testUtils, String endpoint, String xUserId){
         response = given().log().all().header("X-User-Id", xUserId).contentType(ContentType.JSON).body(testUtils).when().post(endpoint).then().extract().response();
@@ -54,10 +41,6 @@ public class TabRequestCalls {
 
 
     }
-
-
-
-
 
     public Response getCall(String endpoint, String xUserId){
         System.out.println("xuserid...." + xUserId);
@@ -75,6 +58,7 @@ public class TabRequestCalls {
                 .extract()
                 .response();
         String jsonAsString = response.asString();
+        System.out.println("Printing jsonAsString........"+ jsonAsString);
         return response;
 
     }

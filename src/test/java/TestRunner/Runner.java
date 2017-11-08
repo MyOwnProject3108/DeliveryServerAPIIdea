@@ -12,15 +12,15 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions (features = "src/test/java/Resources",glue = "StepDefinitions",
+@CucumberOptions (features = "src/test/resources",glue = "StepDefinitions",
         plugin = {"com.cucumber.listener.ExtentCucumberFormatter:target/extentreports/report.html"},
-        tags= {"@InvalidUserRetrieveDetails" })
+        tags= {"@InvalidUserRetrieveCSV" })
 
 public class Runner {
 
     @AfterClass
     public static void setup() throws IOException {
-        Reporter.loadXMLConfig(new File("src//test//java//Resources//extent-config.xml"));
+        Reporter.loadXMLConfig(new File("src//test//resources//extent-config.xml"));
         Reporter.setSystemInfo("user", System.getProperty("user.name"));
 
         Reporter.setTestRunnerOutput("Sample test runner output message <br />");
