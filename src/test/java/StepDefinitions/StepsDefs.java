@@ -335,8 +335,7 @@ public class StepsDefs {
             id = config.getProperty("btm_UnAuthId");
         }
 
-        //delete this and run the test
-        else if (xUserId.equalsIgnoreCase("BTMNullAuthUser")) {
+         else if (xUserId.equalsIgnoreCase("BTMNullAuthUser")) {
             id = config.getProperty("btm_NullAuth_userId");
         }
 
